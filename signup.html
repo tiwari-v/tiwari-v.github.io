@@ -1,0 +1,79 @@
+<html>
+<head>
+<script type="text/javascript">
+function CreateAccount(){
+var letters = /^[ A-Za-z]+$/;  
+var email_val = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;  
+
+
+var Name=document.getElementById("n").value;
+var email=document.getElementById("e").value;
+var pass1=document.getElementById("p1").value;
+var pass2=document.getElementById("p2").value;
+
+if (name==""&&email==""&&pass1==""&& pass2==""){  
+     alert("Please fill  all the details");  
+  }
+else if(Name=="")
+{
+alert("Please enter you name");
+}
+else if(!letters.test(Name))  
+        {  
+            alert('Name is incorrect must contain alphabets only');  
+        }
+
+else if(email=="")
+{alert("Please enter your email Id")
+}
+
+else if(!email_val.test(email))  
+        {  
+            alert('Invalid Email format Please eneter valid email id');  
+        }  
+
+
+
+
+
+else if(pass1=="" && pass2==""){
+alert("Passwords can not be blank");
+} 
+else if(pass1==""){ 
+alert("Please Enter Password");
+     }
+
+else if(pass2=="")
+          { 
+alert("Please confirm Password");
+     }
+else if (pass1 != pass2){  
+     alert("Password did not match");  
+  }
+else {
+alert("form created Successfully");
+}
+}
+</script>
+</head>
+<body align="center" background="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTguShE9XkKwMf1hobBC8AwlK8hd35L_XMIHg&usqp=CAU" style=background-repeat:no-repeat;background-size:cover;>
+<h1>Create Your Account</h1>
+ 
+<table align="center" cellspacing="2" cellpadding="8" border="2" background="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTguShE9XkKwMf1hobBC8AwlK8hd35L_XMIHg&usqp=CAU" style=background-repeat:no-repeat;background-size:cover;>
+<tr><td>NAME</>
+<td><input type="text" placeholder="Enter Your Name"  id="n"></input></td>
+</tr>
+<tr><td>Email</td>
+<td><input type="email" placeholder="Enter Your Email Id"id="e"> </input></td>
+</tr>
+<tr><td>Set Password</td>
+<td><input type="password" placeholder="Enter Your Password" id="p1"> </input></td>
+</tr>
+<tr><td>Confirm Password</td>
+<td><input type="password" placeholder="Confirm Your Password" id="p2"> </input></td>
+</tr>
+<tr><td bgcolor="green">
+<input type="submit" value="Create" onclick="CreateAccount()"></input>
+</table>
+</body>
+</html>
